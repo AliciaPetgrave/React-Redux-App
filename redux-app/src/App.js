@@ -1,8 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import {connect} from 'react-redux'
+import {addQuote} from './actions/mainActions'
+
+function App(props) {
   return (
     <div className="App">
         <h1>API</h1>
@@ -11,4 +13,11 @@ function App() {
   );
 }
 
-export default App;
+
+const mapStateToProps = state => {
+  return {
+    quote: state.addQuote
+  }
+}
+
+export default connect(mapStateToProps, {addQuote})(App)
