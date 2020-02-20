@@ -4,6 +4,30 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  align-items:center;
   color: white;
+}
+
+h1{
+  margin:0;
+}
+
+button{
+  border: none;
+  padding:8px 8px;
+  border-radius:4px;
+  background:rgb(2, 201, 228);
+  color:white;
+  font-size:15px;
+  font-weight:600;
+}
+
+.tweet{
+  margin:auto;
+  border:2px solid white;
+  padding:40px
+}
+
+.tweet p{
+  font-size:18px;
 }

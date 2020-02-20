@@ -1,14 +1,16 @@
 import axios from 'axios'
+export const ADD_QUOTE = "ADD_QUOTE"
+export const SUCCESS = "SUCCESS"
 
-export const addQuote = () => {
-    return dispatch => {
+export const addQuote = () => dispatch => {
         dispatch ({type: "ADD_QUOTE"})
-        axios.get("http://api.icndb.com/jokes/random?firstName=Chuck&amp;lastName=Norris")
+        axios.get("https://api.kanye.rest")
         .then(response => {
             console.log(response.data)
+            dispatch({type: "SUCCESS", payload: response.data.quote})
         })
         .catch(err =>{
             console.log(err)
         })
-    }
+    
 }

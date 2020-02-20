@@ -7,8 +7,11 @@ import {addQuote} from './actions/mainActions'
 function App(props) {
   return (
     <div className="App">
-        <h1>API</h1>
-      
+      <div className="tweet">
+        <h1>Kanye West Tweets</h1>
+      <p>{props.quote}</p>
+      <button onClick={props.addQuote}>Generate Tweet</button>
+      </div>
     </div>
   );
 }
@@ -16,7 +19,8 @@ function App(props) {
 
 const mapStateToProps = state => {
   return {
-    quote: state.addQuote
+    quote: state.quote,
+    isLoading: state.isLoading
   }
 }
 
